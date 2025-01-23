@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node dist/main.js",
     "dev": "tsx src/main.ts",
-    "build": "tsup src/main.ts"
+    "build": "tsup src/main.ts",
+    "compile": "bun build src/main.ts --target=node --compile --outfile spring-initializr"
   },
   "keywords": ["spring", "initializr", "cli", "spring boot", "project generator", "command line tool"],
   "author": "gabrielalmir",
