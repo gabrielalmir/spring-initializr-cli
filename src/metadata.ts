@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export interface Metadata {
     dependencies: {
         values: { name: string; values: { id: string; name: string }[] }[];
@@ -12,8 +10,9 @@ export interface Metadata {
 }
 
 export async function fetchMetadata(): Promise<Metadata> {
-    const { data } = await axios.get("https://start.spring.io", {
+    const response = await fetch("https://start.spring.io", {
         headers: { Accept: "application/vnd.initializr.v2.2+json" },
     });
-    return data;
+
+    return response.json();
 };

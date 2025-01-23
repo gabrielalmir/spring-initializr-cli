@@ -1,5 +1,4 @@
 import AdmZip from "adm-zip";
-import axios from "axios";
 import fs from "fs-extra";
 import path from "path";
 
@@ -8,16 +7,15 @@ export async function generateProject(
     outputDir: string,
     filename: string
 ) {
-    const response = await axios.get(`https://start.spring.io/starter.zip?${params}`, {
-        responseType: "arraybuffer",
-    });
+    const response = await fetch(`https://start.spring.io/starter.zip?${params}`);
 
-    if (response.status !== 200) {
+    if (!response.ok) {
         throw new Error(`Failed to generate project: ${response.statusText}`);
     }
 
+    const buffer = await response.arrayBuffer();
     const outputPath = path.join(outputDir, filename);
-    await fs.writeFile(outputPath, response.data);
+    await fs.writeFile(outputPath, Buffer.from(buffer));
     console.log(`Project saved to: ${outputPath}`);
 };
 

@@ -9,7 +9,14 @@
     "build": "tsup src/main.ts",
     "compile": "bun build src/main.ts --target=node --compile --outfile spring-initializr"
   },
-  "keywords": ["spring", "initializr", "cli", "spring boot", "project generator", "command line tool"],
+  "keywords": [
+    "spring",
+    "initializr",
+    "cli",
+    "spring boot",
+    "project generator",
+    "command line tool"
+  ],
   "author": "gabrielalmir",
   "license": "MIT",
   "devDependencies": {
@@ -23,7 +30,6 @@
     "@inquirer/prompts": "^7.2.3",
     "@types/adm-zip": "^0.5.7",
     "adm-zip": "^0.5.16",
-    "axios": "^1.7.9",
     "fs-extra": "^11.3.0"
   }
 }
