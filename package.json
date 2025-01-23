@@ -1,0 +1,28 @@
+{
+  "name": "spring-initializr-cli",
+  "version": "1.0.0",
+  "description": "spring-initializr-cl it is a command-line interface (CLI) tool to generate Spring Boot projects using the Spring Initializr API",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "tsx src/main.ts",
+    "build": "tsup src/main.ts"
+  },
+  "keywords": ["spring", "initializr", "cli", "spring boot", "project generator", "command line tool"],
+  "author": "gabrielalmir",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.10.7",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.2.3",
+    "@types/adm-zip": "^0.5.7",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.7.9",
+    "fs-extra": "^11.3.0"
+  }
+}
